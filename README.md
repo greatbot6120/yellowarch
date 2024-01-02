@@ -4,7 +4,7 @@ This is my dotfiles archive for my silly little yellow themed arch. I'm not deep
 
 Shit to do:
 
-- [] zsh prompt theming, configuration of p10k
-- [] nvim
-- [] rofi (I have to re-learn CSS for fuck sake)
-- [] major shell scripts that do my personal shit
+- [ ] zsh prompt theming, configuration of p10k
+- [ ] nvim
+- [ ] rofi (I have to re-learn CSS for fuck sake)
+- [ ] major shell scripts that do my personal shit
