@@ -13,4 +13,4 @@ This is my dotfiles archive for my silly little yellow themed arch. I'm not deep
 - [ ] rofi (I have to re-learn CSS for fuck sake)
 - [ ] major shell scripts that do my personal shit
 - [ ] joshuto  
-- [ ] write my own fetch
+- [x] ~~write my own fetch~~ yoinked the source from [here](https://github.com/13-CF/afetch.git) lmaooo
