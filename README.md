@@ -8,9 +8,18 @@ This is my dotfiles archive for my silly little yellow themed arch. I'm not deep
 
 ##  Shit to rice:
 
+- [ ] overall theme, it is kinda inconsistent rn (yellow too bright)
 - [ ] zsh prompt, configuration of p10k
 - [ ] nvim
 - [ ] rofi (I have to re-learn CSS for fuck sake)
 - [ ] major shell scripts that do my personal shit
 - [ ] joshuto  
 - [x] ~~write my own fetch~~ yoinked the source from [here](https://github.com/13-CF/afetch.git) lmaooo
+- [ ] finish to configure `kitty.conf`
+    *   colorscheme
+    *   active & non-active dims (maybe with `hyprland.conf`? I'll se the kitty-wiki...)
+- [ ] firefox custom `.css` I'm tired of all that bloat-UI up there, want a minimal interface maybe only the search bar
+
+##  Notes
+
+*   Upgraded to kitty, maintaining the terminator config just in case (they're the same with the maps too)
