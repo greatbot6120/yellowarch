@@ -16,10 +16,10 @@ This is my dotfiles archive for my silly little yellow themed arch. I'm not deep
 - [ ] joshuto  
 - [x] ~~write my own fetch~~ yoinked the source from [here](https://github.com/13-CF/afetch.git) lmaooo
 - [x] finish to configure `kitty.conf`
-    *   colorscheme
-    *   active & non-active dims (maybe with `hyprland.conf`? I'll se the kitty-wiki...)
+    - [ ] fix conflicting colors (gray in the VCS status module of powerlevel10k and issue with `LS_COLORS` remap)   
+    - [x] colorscheme
+    - [x] active & non-active dims (maybe with `hyprland.conf`? I'll se the kitty-wiki...)
 - [x] firefox custom `.css` I'm tired of all that bloat-UI up there, want a minimal interface maybe only the search bar
-    
     - [ ] adjust colors in the `.css` files 
 - [x] main aliases
 
