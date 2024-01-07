@@ -4,6 +4,7 @@ alias cm='cmatrix -C yellow'
 alias vi='nvim'
 
 # git
+alias gc='git clone'
 alias gss='git status'
 alias ga='git add'
 alias gm='git commit -m'
