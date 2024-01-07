@@ -1,0 +1,23 @@
+alias ls='ls -F --color=auto --group-directories-first'
+alias grep='grep --color=auto'
+alias cm='cmatrix -C yellow' 
+alias vi='nvim'
+
+# git
+alias gss='git status'
+alias ga='git add'
+alias gm='git commit -m'
+alias gp='git push'
+alias gl='git log --graph'
+
+# easy explore
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
+# wifi
+alias nm='nmcli device wifi list'
+
+# get list
+alias galiases='cat $HOME/.config/zsh/aliases | grep alias'

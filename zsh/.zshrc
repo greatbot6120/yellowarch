@@ -13,16 +13,12 @@ SAVEHIST=1000
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
-
+source $HOME/.config/zsh/aliases
 #LS_COLORS
 export LS_COLORS="di=30;103:"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-alias ls='ls -F --color=auto --group-directories-first'
-alias grep='grep --color=auto'
-alias cm='cmatrix -C yellow' 
-alias vi='nvim'
 #export PATH=$PATH:$HOME/.local/bin
 
 # customized afetch with my nickname :)
