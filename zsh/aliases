@@ -19,6 +19,11 @@ alias .....="cd ../../../.."
 
 # wifi
 alias nm='nmcli device wifi list'
+alias pi='ping google.com'
 
-# get list
-alias galiases='cat $HOME/.config/zsh/aliases | grep alias'
+# get lists
+alias galiases='cat $HOME/.config/zsh/aliases | grep alias | less'
+alias gbinds='cat $HOME/.config/hypr/hyprland.conf | grep bind | less'
+
+# mupdf
+alias mu='mupdf'
