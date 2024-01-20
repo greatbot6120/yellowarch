@@ -12,7 +12,6 @@ This is my dotfiles archive for my silly little yellow themed arch. I'm not deep
 - [x] zsh prompt, configuration of p10k
 - [ ] nvim
 - [ ] rofi (I have to re-learn CSS for fuck sake)
-- [ ] major shell scripts that do my personal shit
 - [ ] joshuto  
 - [x] ~~write my own fetch~~ yoinked the source from [here](https://github.com/13-CF/afetch.git) lmaooo
 - [x] finish to configure `kitty.conf`
@@ -23,10 +22,20 @@ This is my dotfiles archive for my silly little yellow themed arch. I'm not deep
 - [x] firefox custom `.css` I'm tired of all that bloat-UI up there, want a minimal interface maybe only the search bar
     - [ ] adjust colors in the `.css` files 
 - [x] main aliases
-- [ ] binds for volume and brightness
+- [x] binds for volume 
+    - [ ] and brightness
+
+##  General shit to do:
+
+- [ ] major shell scripts that do my personal shit
+- [ ] make list of dependencies for the main install script
+- [ ] custom spotify (spicetify)
+- [ ] script for the PAT (personal access token)
 
 ##  Notes / Updates
 
 *   Upgraded to kitty, maintaining the terminator config just in case (they're the same with the maps too)
 *   For the first time i mapped shutdown and reboot commands (better late than ever)
-*   custom `.css` for firefox that I found was ugly as fuck, maintaining the stock theme for now
+*   Custom `.css` for firefox that I found was ugly as fuck, maintaining the stock theme for now
+*   Lowkey wanna switch to d-menu
+*   Applied some global binds
