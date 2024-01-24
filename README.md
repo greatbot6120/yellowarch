@@ -33,7 +33,7 @@ This is my dotfiles archive for my silly little yellow themed arch. I'm not deep
 - [ ] custom wofi like Spotlight on macOS and make it scripable:
     > I wanna make a wofi interface similar to the Spotlight tool in macOS and make it like a minimal search engine for my commonly used websites. I also wanna create a menu that displays my main config files and automatically launch nvim to edit them if I select them. Other utilities will be added here if any. Image reference:
     
-    <img src="https://github.com/greatbot6120/yellowarch/blob/branchino-er-criminale/images/spotlight.jpeg">
+    <img src="https://github.com/greatbot6120/yellowarch/blob/branchino-er-criminale/images/spotlight.png">
 
 
 ##  Notes / Updates
