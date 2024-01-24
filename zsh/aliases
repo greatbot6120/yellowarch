@@ -36,4 +36,5 @@ alias p10='nvim $HOME/.p10k.zsh'
 alias vic='nvim $HOME/.config/nvim/init.vim'
 alias zc='nvim $HOME/.zshrc'
 
-
+# Hyprland start
+alias hy='Hyprland'

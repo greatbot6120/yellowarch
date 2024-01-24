@@ -6,12 +6,11 @@
 
 This is my dotfiles archive for my silly little yellow themed arch. I'm not deeply passionate about the yellow color but I only like the wallpaper that's in the `./wallpapers` folder so...
 
-##  Shit to rice:
+##  Shit to do:
 
 - [x] overall theme, it is kinda inconsistent rn (yellow too bright)
 - [x] zsh prompt, configuration of p10k
 - [ ] nvim
-- [ ] rofi (I have to re-learn CSS for fuck sake)
 - [ ] joshuto  
 - [x] ~~write my own fetch~~ yoinked the source from [here](https://github.com/13-CF/afetch.git) lmaooo
 - [x] finish to configure `kitty.conf`
@@ -23,14 +22,19 @@ This is my dotfiles archive for my silly little yellow themed arch. I'm not deep
     - [ ] adjust colors in the `.css` files 
 - [x] main aliases
 - [x] binds for volume 
-    - [ ] and brightness
-
-##  General shit to do:
-
 - [ ] major shell scripts that do my personal shit
 - [ ] make list of dependencies for the main install script
 - [ ] custom spotify (spicetify)
+
+##  Projects to do:
+
 - [ ] script for the PAT (personal access token)
+- [ ] script for manipulating the brightness to add in `hyprland.conf`
+- [ ] custom wofi like Spotlight on macOS and make it scripable:
+    > I wanna make a wofi interface similar to the Spotlight tool in macOS and make it like a minimal search engine for my commonly used websites. I also wanna create a menu that displays my main config files and automatically launch nvim to edit them if I select them. Other utilities will be added here if any. Image reference:
+    
+    <img src="https://github.com/greatbot6120/yellowarch/blob/branchino-er-criminale/images/spotlight.jpeg">
+
 
 ##  Notes / Updates
 
