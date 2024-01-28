@@ -1,6 +1,6 @@
 alias ls='ls -F --color=auto --group-directories-first'
 alias grep='grep --color=auto'
-alias cm='cmatrix -C yellow' 
+#alias cm='cmatrix -C yellow' 
 #alias vi='nvim'
 
 # git

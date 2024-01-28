@@ -35,6 +35,55 @@ This is my dotfiles archive for my silly little yellow themed arch. I'm not deep
     
     <img src="https://github.com/greatbot6120/yellowarch/blob/branchino-er-criminale/images/spotlight.png">
 
+##  Dependencies and various programs (`pacman -Qe, yay -Qe and git repos`)
+
+```txt
+// pacman -Qe
+alsa-utils
+evince
+exfat-utils
+feh
+firefox
+git
+grub
+hyprland
+hyprpaper
+hyprshot
+intel-ucode
+kitty
+man-db
+man-pages
+mupdf
+neovim
+networkmanager
+obs-studio
+pavu-control
+puddletag
+pulseaudio
+pulseaudio-jack
+qbittorrent
+speedtest-cli
+sudo
+telegram-desktop
+tree
+vlc
+wireplumber
+wofi
+xdg-desktop-portal-hyprland
+yay
+zsh
+```
+
+```sh
+# powerlevel10k
+$ yay -S --noconfirm zsh-theme-powerlevel10k-git
+
+# nerd-fonts
+$ git clone --depth 1 https://github.com/ryanoasis/nerd-fonts.git
+$ cd nerd-fonts
+$ ./install.sh JetBrainsMono # and other fonts if I want
+```
+
 ##  Notes / Updates
 
 *   Upgraded to kitty, maintaining the terminator config just in case (they're the same with the maps too)

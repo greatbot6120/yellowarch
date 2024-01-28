@@ -9,15 +9,16 @@ fi
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
+
 # End of lines configured by zsh-newuser-install
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 source $HOME/.config/zsh/aliases
+
 #LS_COLORS
 export LS_COLORS="di=30;103:"
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 #export PATH=$PATH:$HOME/.local/bin
 
