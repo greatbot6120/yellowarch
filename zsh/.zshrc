@@ -23,3 +23,10 @@ export LS_COLORS="di=30;103:"
 
 # customized afetch with my nickname :)
 afetch
+
+# custom nvim entry
+vi() {
+  
+  nvim "$1" -c "Neotree filesystem reveal left"
+
+}

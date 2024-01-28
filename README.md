@@ -1,4 +1,4 @@
-#   dotfiles-yelow-arch
+#   dotfiles-yellow-arch
 
 <img src="https://github.com/greatbot6120/yellowarch/blob/branchino-er-criminale/screenshots/example.png">
 
@@ -10,9 +10,9 @@ This is my dotfiles archive for my silly little yellow themed arch. I'm not deep
 
 - [x] overall theme, it is kinda inconsistent rn (yellow too bright)
 - [x] zsh prompt, configuration of p10k
-- [ ] nvim
+- [x] nvim
 - [ ] joshuto  
-- [x] ~~write my own fetch~~ yoinked the source from [here](https://github.com/13-CF/afetch.git) lmaooo
+- [ ] ~~write my own fetch~~ yoinked the source from [here](https://github.com/13-CF/afetch.git) lmaooo
 - [x] finish to configure `kitty.conf`
     - [x] fix conflicting colors (gray in the VCS status module of powerlevel10k and issue with `LS_COLORS` remap)   
         *   fixed commenting yellow and green colors in `Adapta.conf`      
@@ -24,7 +24,7 @@ This is my dotfiles archive for my silly little yellow themed arch. I'm not deep
 - [x] binds for volume 
 - [ ] major shell scripts that do my personal shit
 - [ ] make list of dependencies for the main install script
-- [ ] custom spotify (spicetify)
+- [ ] ~~custom spotify (spicetify)~~ I left Spotify for ethical reasons, I'm using [Tidal](https://tidal.com/) now
 
 ##  Projects to do:
 
@@ -35,7 +35,6 @@ This is my dotfiles archive for my silly little yellow themed arch. I'm not deep
     
     <img src="https://github.com/greatbot6120/yellowarch/blob/branchino-er-criminale/images/spotlight.png">
 
-
 ##  Notes / Updates
 
 *   Upgraded to kitty, maintaining the terminator config just in case (they're the same with the maps too)
@@ -43,3 +42,4 @@ This is my dotfiles archive for my silly little yellow themed arch. I'm not deep
 *   Custom `.css` for firefox that I found was ugly as fuck, maintaining the stock theme for now
 *   Lowkey wanna switch to d-menu
 *   Applied some global binds
+*   Neovim configured and Installed some plugins like [neo-tree](https://github.com/nvim-neo-tree/neo-tree.nvim), [lazy](https://github.com/folke/lazy.nvim) and [telescope](https://github.com/nvim-telescope/telescope.nvim)
