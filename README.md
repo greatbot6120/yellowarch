@@ -11,7 +11,9 @@ This is my dotfiles archive for my silly little yellow themed arch. I'm not deep
 *   [Shit to do](#shit-to-do)
 *   [Projects to do](#projects-to-do)
 *   [Dependencies and various programs](#dependencies-and-various-programs)
-*   [Notes / Updates](#notes-/-Updates)
+*   [Notes / Updates](#notes-/-updates)
+
+---
 
 ###  Shit to do:
 
