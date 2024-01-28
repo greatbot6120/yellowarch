@@ -6,7 +6,14 @@
 
 This is my dotfiles archive for my silly little yellow themed arch. I'm not deeply passionate about the yellow color but I only like the wallpaper that's in the `./wallpapers` folder so...
 
-##  Shit to do:
+##  Table of contents
+
+*   [Shit to do](#shit-to-do)
+*   [Projects to do](#projects-to-do)
+*   [Dependencies and various programs](#dependencies-and-various-programs)
+*   [Notes / Updates](#notes-/-Updates)
+
+###  Shit to do:
 
 - [x] overall theme, it is kinda inconsistent rn (yellow too bright)
 - [x] zsh prompt, configuration of p10k
@@ -26,7 +33,7 @@ This is my dotfiles archive for my silly little yellow themed arch. I'm not deep
 - [ ] make list of dependencies for the main install script
 - [ ] ~~custom spotify (spicetify)~~ I left Spotify for ethical reasons, I'm using [Tidal](https://tidal.com/) now
 
-##  Projects to do:
+###  Projects to do:
 
 - [ ] script for the PAT (personal access token)
 - [ ] script for manipulating the brightness to add in `hyprland.conf`
@@ -35,7 +42,7 @@ This is my dotfiles archive for my silly little yellow themed arch. I'm not deep
     
     <img src="https://github.com/greatbot6120/yellowarch/blob/branchino-er-criminale/images/spotlight.png">
 
-##  Dependencies and various programs (`pacman -Qe, yay -Qe and git repos`)
+###  Dependencies and various programs
 
 ```txt
 // pacman -Qe
@@ -84,7 +91,7 @@ $ cd nerd-fonts
 $ ./install.sh JetBrainsMono # and other fonts if I want
 ```
 
-##  Notes / Updates
+###  Notes / Updates
 
 *   Upgraded to kitty, maintaining the terminator config just in case (they're the same with the maps too)
 *   For the first time i mapped shutdown and reboot commands (better late than ever)
