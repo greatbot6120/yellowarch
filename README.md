@@ -4,8 +4,6 @@
 
 > Credits to **Bubbo**, head of branch-naming-design of this project
 
-This is my dotfiles archive for my silly little yellow themed arch. I'm not deeply passionate about the yellow color but I only like the wallpaper that's in the `./wallpapers` folder so...
-
 ##  Table of contents
 
 *   [Shit to do](#shit-to-do)
