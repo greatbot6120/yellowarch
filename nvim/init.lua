@@ -25,8 +25,24 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-  
-  { "ellisonleao/gruvbox.nvim", priority = 1000 , config = true, opts = ...},
+
+  {
+    'projekt0n/github-nvim-theme',
+    lazy = false, -- make sure we load this during startup if it is your main colorscheme
+    priority = 1000, -- make sure to load this before all the other start plugins
+    config = function()
+      require('github-theme').setup({
+         
+        options = {
+
+          transparent = true,
+        },
+
+      })
+
+      vim.cmd('colorscheme github_dark')
+    end,
+  },
 
   {
     'nvim-telescope/telescope.nvim', tag = '0.1.5',
@@ -76,6 +92,6 @@ vim.keymap.set('n', '<leader>fo', builtin.oldfiles, {})
 vim.keymap.set('n', '<leader>mp', builtin.man_pages, {})
 vim.keymap.set('n', '<leader>fe', ':Neotree filesystem reveal left<CR>', {})
 vim.o.background = "dark" -- or "light" for light mode
-vim.cmd([[colorscheme gruvbox]])
+vim.cmd([[colorscheme github_dark]])
 
 -- prova

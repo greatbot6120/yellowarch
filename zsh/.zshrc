@@ -17,7 +17,7 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 source $HOME/.config/zsh/aliases
 
 #LS_COLORS
-export LS_COLORS="di=30;103:"
+#export LS_COLORS="di=30;103:"
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 #export PATH=$PATH:$HOME/.local/bin
@@ -31,3 +31,4 @@ vi() {
   nvim "$1" -c "Neotree filesystem reveal left"
 
 }
+
