@@ -23,7 +23,7 @@ source $HOME/.config/zsh/aliases
 #export PATH=$PATH:$HOME/.local/bin
 
 # customized afetch with my nickname :)
-afetch
+#afetch
 
 # custom nvim entry
 vi() {
@@ -32,3 +32,9 @@ vi() {
 
 }
 
+mu() {
+
+  mupdf -I "$1" /dev/null 2>&1 & 
+
+}
+#export BEMENU_OPTS='--prompt "Search >" --fn "JetBrainsMono Nerd Font 6.5"'

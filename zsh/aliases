@@ -25,9 +25,6 @@ alias pi='ping google.com'
 alias galiases='cat $HOME/.config/zsh/aliases | grep alias | less'
 alias gbinds='cat $HOME/.config/hypr/hyprland.conf | grep bind | less'
 
-# mupdf
-alias mu='mupdf'
-
 # fast edit main configs
 alias aliases='nvim $HOME/.config/zsh/aliases'
 alias hyprl='nvim $HOME/.config/hypr/hyprland.conf'
@@ -35,6 +32,8 @@ alias hyprp='nvim $HOME/.config/hypr/hyprpaper.conf'
 alias p10='nvim $HOME/.p10k.zsh'
 alias vic='nvim $HOME/.config/nvim/init.vim'
 alias zc='nvim $HOME/.zshrc'
+
+alias jo='joshuto'
 
 # Hyprland start
 alias hy='Hyprland'
