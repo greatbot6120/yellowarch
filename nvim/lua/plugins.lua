@@ -94,6 +94,7 @@ return {
             
             capabilities = capabilities
         }
+        lspconfig.pyright.setup({})
     end 
   },
 
@@ -101,8 +102,8 @@ return {
   {'hrsh7th/cmp-buffer'},
   {'hrsh7th/cmp-path'},
   {'hrsh7th/cmp-cmdline'},
-  {'hrsh7th/nvim-cmp'}
-
+  {'hrsh7th/nvim-cmp'},
+  { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} }
 
 
 
