@@ -75,6 +75,7 @@ telegram-desktop
 tree
 vlc
 wireplumber
+wl-gammarelay-rs
 wofi
 xdg-desktop-portal-hyprland
 yay

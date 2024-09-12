@@ -10,6 +10,8 @@ HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 
+export EDITOR=nvim
+
 # End of lines configured by zsh-newuser-install
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
@@ -34,7 +36,7 @@ vi() {
 
 mu() {
 
-  mupdf -I "$1" /dev/null 2>&1 & 
+  mupdf "$1" /dev/null 2>&1 & 
 
 }
 #export BEMENU_OPTS='--prompt "Search >" --fn "JetBrainsMono Nerd Font 6.5"'

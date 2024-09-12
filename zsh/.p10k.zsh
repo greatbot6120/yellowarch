@@ -33,7 +33,8 @@
   # The list of segments shown on the left. Fill it with the most important segments.
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
     # =========================[ Line #1 ]=========================
-    os_icon               # os identifier
+    os_icon              # os identifier
+    host
     dir                     # current directory
     vcs                     # git status
     # =========================[ Line #2 ]=========================
@@ -86,7 +87,7 @@
     gcloud                  # google cloud cli account and project (https://cloud.google.com/)
     google_app_cred         # google application credentials (https://cloud.google.com/docs/authentication/production)
     toolbox                 # toolbox name (https://github.com/containers/toolbox)
-    context                 # user@hostname
+#    context                 # user@hostname
     nordvpn                 # nordvpn connection status, linux only (https://nordvpn.com/)
     ranger                  # ranger shell (https://github.com/ranger/ranger)
     nnn                     # nnn shell (https://github.com/jarun/nnn)
@@ -107,7 +108,9 @@
     taskwarrior             # taskwarrior task count (https://taskwarrior.org/)
     per_directory_history   # Oh My Zsh per-directory-history local/global indicator
     # cpu_arch              # CPU architecture
-    #time                  # current time
+    time battery_joined             
+    ip
+    disk_usage
     # =========================[ Line #2 ]=========================
     newline
     # ip                    # ip address and bandwidth usage for a specified network interface
@@ -138,7 +141,7 @@
   typeset -g POWERLEVEL9K_ICON_BEFORE_CONTENT=
 
   # Add an empty line before each prompt.
-  typeset -g POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+  typeset -g POWERLEVEL9K_PROMPT_ADD_NEWLINE=false
   # Connect left prompt lines with these symbols. You'll probably want to use the same color
   # as POWERLEVEL9K_MULTILINE_FIRST_PROMPT_GAP_FOREGROUND below.
   typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX='%254F╭─'
@@ -190,11 +193,11 @@
 
   #################################[ os_icon: os identifier ]##################################
   # OS identifier color.
-  typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=232
-  typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND=254
+  typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=254
+  typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND=163
 
   # Custom icon.
-  typeset -g POWERLEVEL9K_OS_ICON_CONTENT_EXPANSION='󰣇'
+  typeset -g POWERLEVEL9K_OS_ICON_CONTENT_EXPANSION='   '
 
   ################################[ prompt_char: prompt symbol ]################################
   # Transparent background.
@@ -221,7 +224,7 @@
 
   ##################################[ dir: current directory ]##################################
   # Current directory background color.
-  typeset -g POWERLEVEL9K_DIR_BACKGROUND=220
+  typeset -g POWERLEVEL9K_DIR_BACKGROUND=176
   # Default current directory foreground color.
   typeset -g POWERLEVEL9K_DIR_FOREGROUND=234
   # If directory is too long, shorten some of its segments to the shortest possible unique
@@ -814,12 +817,12 @@
 
   ##################################[ disk_usage: disk usage ]##################################
   # Colors for different levels of disk usage.
-  typeset -g POWERLEVEL9K_DISK_USAGE_NORMAL_FOREGROUND=3
-  typeset -g POWERLEVEL9K_DISK_USAGE_NORMAL_BACKGROUND=0
+  typeset -g POWERLEVEL9K_DISK_USAGE_NORMAL_FOREGROUND=254
+  typeset -g POWERLEVEL9K_DISK_USAGE_NORMAL_BACKGROUND=163
   typeset -g POWERLEVEL9K_DISK_USAGE_WARNING_FOREGROUND=0
-  typeset -g POWERLEVEL9K_DISK_USAGE_WARNING_BACKGROUND=3
+  typeset -g POWERLEVEL9K_DISK_USAGE_WARNING_BACKGROUND=163
   typeset -g POWERLEVEL9K_DISK_USAGE_CRITICAL_FOREGROUND=7
-  typeset -g POWERLEVEL9K_DISK_USAGE_CRITICAL_BACKGROUND=1
+  typeset -g POWERLEVEL9K_DISK_USAGE_CRITICAL_BACKGROUND=163
   # Thresholds for different levels of disk usage (percentage points).
   typeset -g POWERLEVEL9K_DISK_USAGE_WARNING_LEVEL=90
   typeset -g POWERLEVEL9K_DISK_USAGE_CRITICAL_LEVEL=95
@@ -961,6 +964,11 @@
   # typeset -g POWERLEVEL9K_CPU_ARCH_VISUAL_IDENTIFIER_EXPANSION='⭐'
 
   ##################################[ context: user@hostname ]##################################
+  typeset -g POWERLEVEL9K_HOST_TEMPLATE='%n@%m'
+  typeset -g POWERLEVEL9K_HOST_BACKGROUND=169
+  typeset -g POWERLEVEL9K_HOST_FOREGROUND=254
+
+
   # Context color when running with privileges.
   typeset -g POWERLEVEL9K_CONTEXT_ROOT_FOREGROUND=1
   typeset -g POWERLEVEL9K_CONTEXT_ROOT_BACKGROUND=0
@@ -977,15 +985,16 @@
   typeset -g POWERLEVEL9K_CONTEXT_{REMOTE,REMOTE_SUDO}_TEMPLATE='%n@%m'
   # Default context format (no privileges, no SSH): user@hostname.
   typeset -g POWERLEVEL9K_CONTEXT_TEMPLATE='%n@%m'
-
+  typeset -g POWERLEVEL9K_ALWAYS_SHOW_CONTEXT=true
+  typeset -g POWERLEVEL9K_ALWAYS_SHOW_USER=true
   # Don't show context unless running with privileges or in SSH.
   # Tip: Remove the next line to always show context.
   typeset -g POWERLEVEL9K_CONTEXT_{DEFAULT,SUDO}_{CONTENT,VISUAL_IDENTIFIER}_EXPANSION=
 
   # Custom icon.
-  # typeset -g POWERLEVEL9K_CONTEXT_VISUAL_IDENTIFIER_EXPANSION='⭐'
+  #typeset -g POWERLEVEL9K_CONTEXT_VISUAL_IDENTIFIER_EXPANSION='⭐'
   # Custom prefix.
-  # typeset -g POWERLEVEL9K_CONTEXT_PREFIX='with '
+  #typeset -g POWERLEVEL9K_CONTEXT_PREFIX='with '
 
   ###[ virtualenv: python virtual environment (https://docs.python.org/3/library/venv.html) ]###
   # Python virtual environment color.
@@ -1676,8 +1685,8 @@
 
   ###########[ ip: ip address and bandwidth usage for a specified network interface ]###########
   # IP color.
-  typeset -g POWERLEVEL9K_IP_BACKGROUND=4
-  typeset -g POWERLEVEL9K_IP_FOREGROUND=0
+  typeset -g POWERLEVEL9K_IP_BACKGROUND=169
+  typeset -g POWERLEVEL9K_IP_FOREGROUND=254
   # The following parameters are accessible within the expansion:
   #
   #   Parameter             | Meaning
@@ -1690,12 +1699,12 @@
   #   P9K_IP_TX_BYTES_DELTA | number of bytes sent since last prompt
   #   P9K_IP_RX_RATE        | receive rate (since last prompt)
   #   P9K_IP_TX_RATE        | send rate (since last prompt)
-  typeset -g POWERLEVEL9K_IP_CONTENT_EXPANSION='${P9K_IP_RX_RATE:+⇣$P9K_IP_RX_RATE }${P9K_IP_TX_RATE:+⇡$P9K_IP_TX_RATE }$P9K_IP_IP'
+  typeset -g POWERLEVEL9K_IP_CONTENT_EXPANSION='$P9K_IP_IP'
   # Show information for the first network interface whose name matches this regular expression.
   # Run `ifconfig` or `ip -4 a show` to see the names of all network interfaces.
   typeset -g POWERLEVEL9K_IP_INTERFACE='[ew].*'
   # Custom icon.
-  # typeset -g POWERLEVEL9K_IP_VISUAL_IDENTIFIER_EXPANSION='⭐'
+  typeset -g POWERLEVEL9K_IP_VISUAL_IDENTIFIER_EXPANSION=''
 
   #########################[ proxy: system-wide http/https/ftp proxy ]##########################
   # Proxy color.
@@ -1709,15 +1718,16 @@
   typeset -g POWERLEVEL9K_BATTERY_LOW_THRESHOLD=20
   typeset -g POWERLEVEL9K_BATTERY_LOW_FOREGROUND=1
   # Show battery in green when it's charging or fully charged.
-  typeset -g POWERLEVEL9K_BATTERY_{CHARGING,CHARGED}_FOREGROUND=2
+  typeset -g POWERLEVEL9K_BATTERY_{CHARGING,CHARGED}_FOREGROUND=232
   # Show battery in yellow when it's discharging.
-  typeset -g POWERLEVEL9K_BATTERY_DISCONNECTED_FOREGROUND=3
+  typeset -g POWERLEVEL9K_BATTERY_DISCONNECTED_FOREGROUND=234
   # Battery pictograms going from low to high level of charge.
-  typeset -g POWERLEVEL9K_BATTERY_STAGES='\uf58d\uf579\uf57a\uf57b\uf57c\uf57d\uf57e\uf57f\uf580\uf581\uf578'
+#  typeset -g POWERLEVEL9K_BATTERY_STAGES='\uf58d\uf579\uf57a\uf57b\uf57c\uf57d\uf57e\uf57f\uf580\uf581'
+  typeset -g POWERLEVEL9K_BATTERY_STAGES=($'\uf243 ' $'\uf243 ' $'\uf242 ' $'\uf242 ' $'\uf241 ' $'\uf241 ' $'\uf240 ' $'\uf240 ')
   # Don't show the remaining time to charge/discharge.
   typeset -g POWERLEVEL9K_BATTERY_VERBOSE=false
-  typeset -g POWERLEVEL9K_BATTERY_BACKGROUND=0
-
+  typeset -g POWERLEVEL9K_BATTERY_BACKGROUND=176
+#  typeset -g POWERLEVEL9K_BATTERY_VISUAL_IDENTIFIER_EXPANSION=' '
   #####################################[ wifi: wifi speed ]#####################################
   # WiFi color.
   typeset -g POWERLEVEL9K_WIFI_FOREGROUND=0
@@ -1747,14 +1757,14 @@
 
   ####################################[ time: current time ]####################################
   # Current time color.
-  typeset -g POWERLEVEL9K_TIME_FOREGROUND=0
-  typeset -g POWERLEVEL9K_TIME_BACKGROUND=7
+  typeset -g POWERLEVEL9K_TIME_FOREGROUND=234
+  typeset -g POWERLEVEL9K_TIME_BACKGROUND=176
   # Format for the current time: 09:51:02. See `man 3 strftime`.
-  typeset -g POWERLEVEL9K_TIME_FORMAT='%D{%H:%M:%S}'
+  typeset -g POWERLEVEL9K_TIME_FORMAT='%D{%H:%M  %d.%m.%Y}'
   # If set to true, time will update when you hit enter. This way prompts for the past
   # commands will contain the start times of their commands as opposed to the default
   # behavior where they contain the end times of their preceding commands.
-  typeset -g POWERLEVEL9K_TIME_UPDATE_ON_COMMAND=false
+  typeset -g POWERLEVEL9K_TIME_UPDATE_ON_COMMAND=true
   # Custom icon.
   typeset -g POWERLEVEL9K_TIME_VISUAL_IDENTIFIER_EXPANSION=
   # Custom prefix.
@@ -1801,7 +1811,7 @@
   #   - always:   Trim down prompt when accepting a command line.
   #   - same-dir: Trim down prompt when accepting a command line unless this is the first command
   #               typed after changing current working directory.
-  typeset -g POWERLEVEL9K_TRANSIENT_PROMPT=always
+  typeset -g POWERLEVEL9K_TRANSIENT_PROMPT=off
 
   # Instant prompt mode.
   #
