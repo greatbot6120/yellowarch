@@ -15,6 +15,7 @@
 
 ###  Shit to do:
 
+- [ ] !! **sourcing entire hyprl conf**
 - [x] overall theme, it is kinda inconsistent rn (yellow too bright)
 - [x] zsh prompt, configuration of p10k
 - [x] nvim
