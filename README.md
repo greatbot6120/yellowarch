@@ -15,6 +15,7 @@
 
 ###  Shit to do:
 
+- [ ] check various dependencies
 - [ ] !! **sourcing entire hyprl conf**
 - [x] overall theme, it is kinda inconsistent rn (yellow too bright)
 - [x] zsh prompt, configuration of p10k
@@ -81,6 +82,7 @@ wofi
 xdg-desktop-portal-hyprland
 yay
 zsh
+playerctl
 ```
 
 ```sh
