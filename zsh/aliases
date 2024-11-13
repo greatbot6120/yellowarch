@@ -38,3 +38,6 @@ alias jo='joshuto'
 
 # Hyprland start
 alias hy='Hyprland'
+
+# startup script 
+alias ini='$HOME/.config/scripts/initial-setup.sh > /dev/null 2>&1'
