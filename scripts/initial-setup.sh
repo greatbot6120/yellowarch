@@ -19,6 +19,4 @@ else
     $HYPERCTL_PATH keyword monitor eDP-1,1920x1080@69,0x0,1;
     sed -zi 's/311_logo_uw.png/311_logo.png/2' /home/greatbot/.config/hypr/hyprpaper.conf;
     hyprpRestarter
-
 fi
-'
