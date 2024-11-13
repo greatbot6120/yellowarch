@@ -9,12 +9,14 @@
 *   [Shit to do](#shit-to-do)
 *   [Projects to do](#projects-to-do)
 *   [Dependencies and various programs](#dependencies-and-various-programs)
-*   [Notes / Updates](#notes-/-updates)
+*   [Notes](#notes)
 
 ---
 
 ###  Shit to do:
 
+- [ ] `initial-script` complete but ofc doesn't mantain changes after a reload of the `hyprland.config` file because the monitor settings aren't specified there but only
+    dinamically in the script
 - [ ] check various dependencies
 - [ ] !! **sourcing entire hyprl conf**
 - [x] overall theme, it is kinda inconsistent rn (yellow too bright)
@@ -95,7 +97,7 @@ $ cd nerd-fonts
 $ ./install.sh JetBrainsMono # and other fonts if I want
 ```
 
-###  Notes / Updates
+###  Notes
 
 *   Upgraded to kitty, maintaining the terminator config just in case (they're the same with the maps too)
 *   For the first time i mapped shutdown and reboot commands (better late than ever)
