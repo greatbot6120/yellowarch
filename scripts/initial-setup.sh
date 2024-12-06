@@ -7,8 +7,12 @@ HYPERCTL_EXIT_CODE=$?;
 
 hyprpRestarter(){
     PID=$(ps -ef | awk '$8=="hyprpaper" {print $2}');
-    kill -9 ${PID};
-    hyprpaper > /dev/null 2>&1 &
+    AWK_EXIT_CODE=$?;
+    
+#    if [ AWK_EXIT_CODE -eq 0 ]; then
+        kill -9 ${PID};
+        hyprpaper > /dev/null 2>&1 &
+#    fi
 }
 
 if [ $HYPERCTL_EXIT_CODE -eq 0 ]; then
