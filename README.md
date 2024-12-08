@@ -15,10 +15,15 @@
 
 ###  Shit to do:
 
+- [ ] zsh completion 
 - [ ] fix file structure accordingly
 - [ ] `wf-recorder` script
 - [x] check various dependencies
-- [x] !! **sourcing entire hyprl conf**
+- [ ] source entire hyprl configuration
+    - [x] bindings
+    - [ ] variables
+    - [ ] windowrules
+    - [ ] startup
 - [x] overall theme
 - [x] zsh prompt, configuration of p10k
 - [x] nvim
