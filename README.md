@@ -99,14 +99,16 @@ zathura 0.5.8-1
 zsh 5.9-5
 zsh-theme-powerlevel10k-git r4304.ef83e13c-1
 
+```
+
 ```sh
 # powerlevel10k
-$ yay -S --noconfirm zsh-theme-powerlevel10k-git
+yay -S --noconfirm zsh-theme-powerlevel10k-git
 
 # nerd-fonts
-$ git clone --depth 1 https://github.com/ryanoasis/nerd-fonts.git
-$ cd nerd-fonts
-$ ./install.sh JetBrainsMono # and other fonts if I want
+git clone --depth 1 https://github.com/ryanoasis/nerd-fonts.git
+cd nerd-fonts
+./install.sh
 ```
 
 ###  Notes
