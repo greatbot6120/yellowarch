@@ -40,4 +40,4 @@ alias jo='joshuto'
 alias hy='Hyprland'
 
 # startup script 
-alias ini='$HOME/.config/scripts/initial-setup.sh > /dev/null 2>&1'
+alias ini='$HOME/.config/scripts/initial-setup > /dev/null 2>&1'

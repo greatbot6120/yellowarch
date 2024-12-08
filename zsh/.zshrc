@@ -14,6 +14,9 @@ SAVEHIST=1000
 
 export EDITOR=nvim
 
+# custom scripts
+export PATH="/home/greatbot/.config/scripts:$PATH"
+
 # End of lines configured by zsh-newuser-install
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
@@ -30,6 +33,12 @@ source $HOME/.config/zsh/aliases
 #afetch
 
 # custom nvim entry
+svi() {
+
+  sudoedit "$1"
+
+}
+
 vi() {
   
   nvim "$1" -c "Neotree filesystem reveal left"
