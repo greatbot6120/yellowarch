@@ -5,7 +5,12 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-autoload -U compinit; compinit
+# autocomplete
+autoload -U compinit;
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+compinit
+_comp_options+=(globdots)
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
@@ -51,3 +56,5 @@ mu() {
 
 }
 #export BEMENU_OPTS='--prompt "Search >" --fn "JetBrainsMono Nerd Font 6.5"'
+source $HOME/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/.config//zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
