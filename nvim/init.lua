@@ -2,7 +2,7 @@ vim.cmd("set showmode")
 vim.cmd("set number relativenumber")
 vim.cmd("set autoindent")
 vim.cmd("set nohlsearch")
-vim.cmd("set autoindent expandtab tabstop=4 shiftwidth=4")
+vim.cmd("set autoindent expandtab tabstop=2 shiftwidth=2")
 vim.cmd("syntax on")
 vim.cmd("set backspace=2")
 vim.cmd("set nuw=10")
@@ -78,8 +78,8 @@ require('lualine').setup {
 -- Lua
 require('onedark').setup  {
     -- Main options --
-    style = 'dark', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
-    transparent = true,  -- Show/hide background
+    style = 'warmer', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+    transparent = false,  -- Show/hide background
     term_colors = true, -- Change terminal color as per the selected theme style
     ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
     cmp_itemkind_reverse = false, -- reverse item kind highlights in cmp menu

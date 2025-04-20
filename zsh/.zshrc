@@ -1,9 +1,16 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+export ELECTRON_OZONE_PLATFORM_HINT=auto
+
+checkTTY(){
+    CHECK_TTY=$(tty | awk -F"/" '{print "/" $2 "/" $3 "/"}');
+    GUI_STR='/dev/pts/';
+ 
+    if [ "$CHECK_TTY" = "$GUI_STR" ]; then
+        source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme;
+        [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh;
+    fi
+}
+
+checkTTY;
 
 # autocomplete
 autoload -U compinit;
@@ -25,36 +32,25 @@ export PATH="/home/greatbot/.config/scripts:$PATH"
 # End of lines configured by zsh-newuser-install
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
-source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 source $HOME/.config/zsh/aliases
 
 #LS_COLORS
 #export LS_COLORS="di=30;103:"
 
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 #export PATH=$PATH:$HOME/.local/bin
 
 # customized afetch with my nickname :)
 #afetch
 
 # custom nvim entry
-svi() {
-
+svi(){
   sudoedit "$1"
-
 }
 
-vi() {
-  
+vi(){
   nvim "$1" -c "Neotree filesystem reveal left"
-
 }
 
-mu() {
-
-  mupdf "$1" /dev/null 2>&1 & 
-
-}
 #export BEMENU_OPTS='--prompt "Search >" --fn "JetBrainsMono Nerd Font 6.5"'
 source $HOME/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $HOME/.config//zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh

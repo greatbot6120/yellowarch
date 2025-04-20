@@ -15,7 +15,8 @@
 
 ###  Shit to do:
 
-- [ ] zsh completion 
+- [ ] env variables (`$HYPERCTL_EXIT_CODE`, etc...) for scripts  
+- [x] zsh completion 
 - [ ] fix file structure accordingly
 - [ ] `wf-recorder` script
 - [x] check various dependencies
