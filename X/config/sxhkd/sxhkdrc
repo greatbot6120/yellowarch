@@ -1,0 +1,66 @@
+# --> Volume Controls
+
+XF86AudioRaiseVolume
+  pactl set-sink-volume @DEFAULT_SINK@ +5%
+
+XF86AudioLowerVolume
+  pactl set-sink-volume @DEFAULT_SINK@ -5%
+
+XF86AudioMute
+  pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+XF86AudioMicMute
+  pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+XF86MonBrightnessUp
+  brightnessctl -d 'amdgpu_bl1' s +10%
+
+XF86MonBrightnessDown
+  brightnessctl -d 'amdgpu_bl1' s 10%-
+
+
+# --> Power Management
+
+super + shift + alt + S
+  systemctl suspend
+  
+super + shift + alt + R
+  shutdown -r now
+
+super + shift + alt + K
+  mpv --volume-gain=10 $HOME/media/vistashutdown.mp3; shutdown -P now
+
+
+# --> Screen Capture
+
+super + shift + {O,R}
+  $HOME/.config/scripts/screenshot {-oc,-rc}
+
+super + ctrl + {o,r}
+  $HOME/.config/scripts/screenshot {-os,-rs}
+
+
+# --> Browser fast URLs
+
+super + alt + {p,w,c,y,a,r,g,m,t}
+  firefox {https://www.polimi.it/,https://webeep.polimi.it/,https://web.whatsapp.com/,https://www.youtube.com/,firefox https://archlinux.org/,https://reddit.com/,https://github.com/greatbot6120,https://rateyourmusic.com/,https://listen.tidal.com/}
+
+
+# --> Internet
+
+super + shift + alt + I
+  nmcli device wifi rescan && herbe "󱛄 Rescanning..."
+
+# --> Programs
+
+super + f
+  firefox
+
+super + v
+  pavucontrol
+
+super + t
+  telegram-desktop
+
+
+

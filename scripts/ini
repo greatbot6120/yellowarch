@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+if [[ $(xrandr | awk '/HDMI-1/ {print $2}') == "connected" ]]; then
+	xrandr --output HDMI-1 --mode 2560x1080 --rate 60;
+	xrandr --output eDP-1 --off;
+	feh --bg-fill /home/greatbot/wallpapers/default_uw.png;
+else
+	xrandr --output eDP-1 --mode 1920x1200 --rate 60;
+	feh --bg-fill /home/greatbot/wallpapers/default.png;
+fi

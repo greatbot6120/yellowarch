@@ -1,0 +1,28 @@
+#!/usr/bin/env zsh
+
+case $1 in
+
+  "-oc")
+    scrot - | xclip -selection clipboard -target image/png 
+    [[ ${pipestatus[1]} -eq 0 ]] && herbe " Image copied to clipboard"
+    ;;
+  
+  "-rc")
+    scrot -s - | xclip -selection clipboard -target image/png;
+    [[ ${pipestatus[1]} -eq 0 ]] && herbe " Image copied to clipboard"
+    ;;
+
+  "-os")
+    scrot "$HOME/media/screenshots/%d-%m-%Y_$(date | awk '{print $4}').png"
+    [[ $? -eq 0 ]] && herbe " Image saved in /home/greatbot/media/screenshots"
+    ;;
+  
+  "-rs")
+    scrot -s "$HOME/media/screenshots/%d-%m-%Y_$(date | awk '{print $4}').png" 
+    [[ $? -eq 0 ]] && herbe " Image saved in /home/greatbot/media/screenshots"
+    ;;
+
+  *)
+    ;;
+
+esac
