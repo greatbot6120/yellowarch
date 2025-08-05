@@ -48,9 +48,7 @@
   # last prompt line gets hidden if it would overlap with left prompt.
   typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
     # =========================[ Line #1 ]=========================
-    status                  # exit code of the last command
-    #command_execution_time  # duration of the last command
-    background_jobs         # presence of background jobs
+    status command_execution_time_joined background_jobs_joined
     direnv                  # direnv status (https://direnv.net/)
     asdf                    # asdf version manager (https://github.com/asdf-vm/asdf)
     virtualenv              # python virtual environment (https://docs.python.org/3/library/venv.html)
@@ -101,16 +99,16 @@
     # vpn_ip                # virtual private network indicator
     # load                  # CPU load
     # disk_usage            # disk usage
-    # ram                   # free RAM
     # swap                  # used swap
     todo                    # todo items (https://github.com/todotxt/todo.txt-cli)
     timewarrior             # timewarrior tracking status (https://timewarrior.net/)
-    taskwarrior             # taskwarrior task count (https://taskwarrior.org/)
     per_directory_history   # Oh My Zsh per-directory-history local/global indicator
     # cpu_arch              # CPU architecture
-    time battery_joined             
-    ip
-    disk_usage
+    #time battery_joined             
+    taskwarrior battery_joined disk_usage_joined ram_joined            # taskwarrior task count (https://taskwarrior.org/)
+   # battery
+    #ip
+    #disk_usage
     # =========================[ Line #2 ]=========================
     newline
     # ip                    # ip address and bandwidth usage for a specified network interface
@@ -144,9 +142,9 @@
   typeset -g POWERLEVEL9K_PROMPT_ADD_NEWLINE=false
   # Connect left prompt lines with these symbols. You'll probably want to use the same color
   # as POWERLEVEL9K_MULTILINE_FIRST_PROMPT_GAP_FOREGROUND below.
-  typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX='%254F╭─'
-  typeset -g POWERLEVEL9K_MULTILINE_NEWLINE_PROMPT_PREFIX='%254F├─'
-  typeset -g POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX='%254F╰─'
+  typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX='%255F╭─'
+  typeset -g POWERLEVEL9K_MULTILINE_NEWLINE_PROMPT_PREFIX='%255F├─'
+  typeset -g POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX='%255F╰─'
   # Connect right prompt lines with these symbols.
   typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_SUFFIX=
   typeset -g POWERLEVEL9K_MULTILINE_NEWLINE_PROMPT_SUFFIX=
@@ -162,7 +160,7 @@
   if [[ $POWERLEVEL9K_MULTILINE_FIRST_PROMPT_GAP_CHAR != ' ' ]]; then
     # The color of the filler. You'll probably want to match the color of POWERLEVEL9K_MULTILINE
     # ornaments defined above.
-    typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_GAP_FOREGROUND=254
+    typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_GAP_FOREGROUND=255
     # Start filler from the edge of the screen if there are no left segments on the first line.
     typeset -g POWERLEVEL9K_EMPTY_LINE_LEFT_PROMPT_FIRST_SEGMENT_END_SYMBOL='%{%}'
     # End filler on the edge of the screen if there are no right segments on the first line.
@@ -193,8 +191,8 @@
 
   #################################[ os_icon: os identifier ]##################################
   # OS identifier color.
-  typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=254
-  typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND=163
+  typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND='#21222c'
+  typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND='#8be9fd'
 
   # Custom icon.
   typeset -g POWERLEVEL9K_OS_ICON_CONTENT_EXPANSION='   '
@@ -224,19 +222,19 @@
 
   ##################################[ dir: current directory ]##################################
   # Current directory background color.
-  typeset -g POWERLEVEL9K_DIR_BACKGROUND=176
+  typeset -g POWERLEVEL9K_DIR_BACKGROUND='#ff6e6e'
   # Default current directory foreground color.
-  typeset -g POWERLEVEL9K_DIR_FOREGROUND=234
+  typeset -g POWERLEVEL9K_DIR_FOREGROUND='#ffffff'
   # If directory is too long, shorten some of its segments to the shortest possible unique
   # prefix. The shortened directory can be tab-completed to the original.
   typeset -g POWERLEVEL9K_SHORTEN_STRATEGY=truncate_to_unique
   # Replace removed segment suffixes with this symbol.
   typeset -g POWERLEVEL9K_SHORTEN_DELIMITER=
   # Color of the shortened directory segments.
-  typeset -g POWERLEVEL9K_DIR_SHORTENED_FOREGROUND=234
+  typeset -g POWERLEVEL9K_DIR_SHORTENED_FOREGROUND='#ffffff'
   # Color of the anchor directory segments. Anchor segments are never shortened. The first
   # segment is always an anchor.
-  typeset -g POWERLEVEL9K_DIR_ANCHOR_FOREGROUND=234
+  typeset -g POWERLEVEL9K_DIR_ANCHOR_FOREGROUND='#ffffff'
   # Display anchor directory segments in bold.
   typeset -g POWERLEVEL9K_DIR_ANCHOR_BOLD=true
   # Don't shorten directories that contain any of these files. They are anchors.
@@ -520,47 +518,47 @@
   # Status on success. No content, just an icon. No need to show it if prompt_char is enabled as
   # it will signify success by turning green.
   typeset -g POWERLEVEL9K_STATUS_OK=true
-  typeset -g POWERLEVEL9K_STATUS_OK_VISUAL_IDENTIFIER_EXPANSION=''
-  typeset -g POWERLEVEL9K_STATUS_OK_FOREGROUND=28
-  typeset -g POWERLEVEL9K_STATUS_OK_BACKGROUND=254
+  typeset -g POWERLEVEL9K_STATUS_OK_VISUAL_IDENTIFIER_EXPANSION=' '
+  typeset -g POWERLEVEL9K_STATUS_OK_FOREGROUND='#50fa7b'
+  typeset -g POWERLEVEL9K_STATUS_OK_BACKGROUND='#21222c'
 
   # Status when some part of a pipe command fails but the overall exit status is zero. It may look
   # like this: 1|0.
   typeset -g POWERLEVEL9K_STATUS_OK_PIPE=true
-  typeset -g POWERLEVEL9K_STATUS_OK_PIPE_VISUAL_IDENTIFIER_EXPANSION=''
-  typeset -g POWERLEVEL9K_STATUS_OK_PIPE_FOREGROUND=28
-  typeset -g POWERLEVEL9K_STATUS_OK_PIPE_BACKGROUND=254
+  typeset -g POWERLEVEL9K_STATUS_OK_PIPE_VISUAL_IDENTIFIER_EXPANSION=' '
+  typeset -g POWERLEVEL9K_STATUS_OK_PIPE_FOREGROUND='#50fa7b'
+  typeset -g POWERLEVEL9K_STATUS_OK_PIPE_BACKGROUND='#21222c'
 
   # Status when it's just an error code (e.g., '1'). No need to show it if prompt_char is enabled as
   # it will signify error by turning red.
   typeset -g POWERLEVEL9K_STATUS_ERROR=true
-  typeset -g POWERLEVEL9K_STATUS_ERROR_VISUAL_IDENTIFIER_EXPANSION=''
-  typeset -g POWERLEVEL9K_STATUS_ERROR_FOREGROUND=1
-  typeset -g POWERLEVEL9K_STATUS_ERROR_BACKGROUND=254
+  typeset -g POWERLEVEL9K_STATUS_ERROR_VISUAL_IDENTIFIER_EXPANSION=' '
+  typeset -g POWERLEVEL9K_STATUS_ERROR_FOREGROUND='#ff5555'
+  typeset -g POWERLEVEL9K_STATUS_ERROR_BACKGROUND='#21222c'
 
   # Status when the last command was terminated by a signal.
   typeset -g POWERLEVEL9K_STATUS_ERROR_SIGNAL=true
   # Use terse signal names: "INT" instead of "SIGINT(2)".
   typeset -g POWERLEVEL9K_STATUS_VERBOSE_SIGNAME=true
-  typeset -g POWERLEVEL9K_STATUS_ERROR_SIGNAL_VISUAL_IDENTIFIER_EXPANSION=''
-  typeset -g POWERLEVEL9K_STATUS_ERROR_SIGNAL_FOREGROUND=1
-  typeset -g POWERLEVEL9K_STATUS_ERROR_SIGNAL_BACKGROUND=254
+  typeset -g POWERLEVEL9K_STATUS_ERROR_SIGNAL_VISUAL_IDENTIFIER_EXPANSION=' '
+  typeset -g POWERLEVEL9K_STATUS_ERROR_SIGNAL_FOREGROUND='#ff5555'
+  typeset -g POWERLEVEL9K_STATUS_ERROR_SIGNAL_BACKGROUND='#21222c'
 
   # Status when some part of a pipe command fails and the overall exit status is also non-zero.
   # It may look like this: 1|0.
   typeset -g POWERLEVEL9K_STATUS_ERROR_PIPE=true
-  typeset -g POWERLEVEL9K_STATUS_ERROR_PIPE_VISUAL_IDENTIFIER_EXPANSION=''
-  typeset -g POWERLEVEL9K_STATUS_ERROR_PIPE_FOREGROUND=1
-  typeset -g POWERLEVEL9K_STATUS_ERROR_PIPE_BACKGROUND=254
+  typeset -g POWERLEVEL9K_STATUS_ERROR_PIPE_VISUAL_IDENTIFIER_EXPANSION=' '
+  typeset -g POWERLEVEL9K_STATUS_ERROR_PIPE_FOREGROUND='#ff5555'
+  typeset -g POWERLEVEL9K_STATUS_ERROR_PIPE_BACKGROUND='#21222c'
 
   ###################[ command_execution_time: duration of the last command ]###################
   # Execution time color.
-  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND=0
-  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND=3
+  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND='#ffffff'
+  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND='#21222c'
   # Show duration of the last command if takes at least this many seconds.
-  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=3
+  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=0
   # Show this many fractional digits. Zero means round to seconds.
-  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_PRECISION=0
+  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_PRECISION=2
   # Duration format: 1d 2h 3m 4s.
   typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_FORMAT='d h m s'
   # Custom icon.
@@ -570,12 +568,12 @@
 
   #######################[ background_jobs: presence of background jobs ]#######################
   # Background jobs color.
-  typeset -g POWERLEVEL9K_BACKGROUND_JOBS_FOREGROUND=6
-  typeset -g POWERLEVEL9K_BACKGROUND_JOBS_BACKGROUND=0
+  typeset -g POWERLEVEL9K_BACKGROUND_JOBS_FOREGROUND='#8be9fd'
+  typeset -g POWERLEVEL9K_BACKGROUND_JOBS_BACKGROUND='#21222c'
   # Don't show the number of background jobs.
   typeset -g POWERLEVEL9K_BACKGROUND_JOBS_VERBOSE=false
   # Custom icon.
-  typeset -g POWERLEVEL9K_BACKGROUND_JOBS_VISUAL_IDENTIFIER_EXPANSION=''
+  typeset -g POWERLEVEL9K_BACKGROUND_JOBS_VISUAL_IDENTIFIER_EXPANSION='󱍸 '
 
   #######################[ direnv: direnv status (https://direnv.net/) ]########################
   # Direnv color.
@@ -817,8 +815,8 @@
 
   ##################################[ disk_usage: disk usage ]##################################
   # Colors for different levels of disk usage.
-  typeset -g POWERLEVEL9K_DISK_USAGE_NORMAL_FOREGROUND=254
-  typeset -g POWERLEVEL9K_DISK_USAGE_NORMAL_BACKGROUND=163
+  typeset -g POWERLEVEL9K_DISK_USAGE_NORMAL_FOREGROUND='#ffffff'
+  typeset -g POWERLEVEL9K_DISK_USAGE_NORMAL_BACKGROUND='#6272a4'
   typeset -g POWERLEVEL9K_DISK_USAGE_WARNING_FOREGROUND=0
   typeset -g POWERLEVEL9K_DISK_USAGE_WARNING_BACKGROUND=163
   typeset -g POWERLEVEL9K_DISK_USAGE_CRITICAL_FOREGROUND=7
@@ -829,7 +827,7 @@
   # If set to true, hide disk usage when below $POWERLEVEL9K_DISK_USAGE_WARNING_LEVEL percent.
   typeset -g POWERLEVEL9K_DISK_USAGE_ONLY_WARNING=false
   # Custom icon.
-  # typeset -g POWERLEVEL9K_DISK_USAGE_VISUAL_IDENTIFIER_EXPANSION='⭐'
+  typeset -g POWERLEVEL9K_DISK_USAGE_VISUAL_IDENTIFIER_EXPANSION=' '
 
   ###########[ vi_mode: vi mode (you don't need this if you've enabled prompt_char) ]###########
   # Foreground color.
@@ -849,10 +847,10 @@
 
   ######################################[ ram: free RAM ]#######################################
   # RAM color.
-  typeset -g POWERLEVEL9K_RAM_FOREGROUND=0
-  typeset -g POWERLEVEL9K_RAM_BACKGROUND=3
+  typeset -g POWERLEVEL9K_RAM_FOREGROUND='#ffffff'
+  typeset -g POWERLEVEL9K_RAM_BACKGROUND='#6272a4'
   # Custom icon.
-  # typeset -g POWERLEVEL9K_RAM_VISUAL_IDENTIFIER_EXPANSION='⭐'
+  typeset -g POWERLEVEL9K_RAM_VISUAL_IDENTIFIER_EXPANSION='󰓅'
 
   #####################################[ swap: used swap ]######################################
   # Swap color.
@@ -917,8 +915,8 @@
 
   ##############[ taskwarrior: taskwarrior task count (https://taskwarrior.org/) ]##############
   # Taskwarrior color.
-  typeset -g POWERLEVEL9K_TASKWARRIOR_FOREGROUND=0
-  typeset -g POWERLEVEL9K_TASKWARRIOR_BACKGROUND=6
+  typeset -g POWERLEVEL9K_TASKWARRIOR_FOREGROUND='#ffffff'
+  typeset -g POWERLEVEL9K_TASKWARRIOR_BACKGROUND='#6272a4'
 
   # Taskwarrior segment format. The following parameters are available within the expansion.
   #
@@ -934,7 +932,7 @@
   # typeset -g POWERLEVEL9K_TASKWARRIOR_CONTENT_EXPANSION='$P9K_TASKWARRIOR_PENDING_COUNT'
 
   # Custom icon.
-  # typeset -g POWERLEVEL9K_TASKWARRIOR_VISUAL_IDENTIFIER_EXPANSION='⭐'
+  typeset -g POWERLEVEL9K_TASKWARRIOR_VISUAL_IDENTIFIER_EXPANSION=' '
 
   ######[ per_directory_history: Oh My Zsh per-directory-history local/global indicator ]#######
   # Color when using local/global history.
@@ -965,8 +963,8 @@
 
   ##################################[ context: user@hostname ]##################################
   typeset -g POWERLEVEL9K_HOST_TEMPLATE='%n@%m'
-  typeset -g POWERLEVEL9K_HOST_BACKGROUND=169
-  typeset -g POWERLEVEL9K_HOST_FOREGROUND=254
+  typeset -g POWERLEVEL9K_HOST_BACKGROUND='#6272a4'
+  typeset -g POWERLEVEL9K_HOST_FOREGROUND='#ffffff'
 
 
   # Context color when running with privileges.
@@ -1718,16 +1716,16 @@
   typeset -g POWERLEVEL9K_BATTERY_LOW_THRESHOLD=20
   typeset -g POWERLEVEL9K_BATTERY_LOW_FOREGROUND=1
   # Show battery in green when it's charging or fully charged.
-  typeset -g POWERLEVEL9K_BATTERY_{CHARGING,CHARGED}_FOREGROUND=232
+  typeset -g POWERLEVEL9K_BATTERY_{CHARGING,CHARGED}_FOREGROUND='#ffffff'
   # Show battery in yellow when it's discharging.
-  typeset -g POWERLEVEL9K_BATTERY_DISCONNECTED_FOREGROUND=234
+  typeset -g POWERLEVEL9K_BATTERY_DISCONNECTED_FOREGROUND='#ffffff'
   # Battery pictograms going from low to high level of charge.
 #  typeset -g POWERLEVEL9K_BATTERY_STAGES='\uf58d\uf579\uf57a\uf57b\uf57c\uf57d\uf57e\uf57f\uf580\uf581'
   typeset -g POWERLEVEL9K_BATTERY_STAGES=($'\uf243 ' $'\uf243 ' $'\uf242 ' $'\uf242 ' $'\uf241 ' $'\uf241 ' $'\uf240 ' $'\uf240 ')
   # Don't show the remaining time to charge/discharge.
   typeset -g POWERLEVEL9K_BATTERY_VERBOSE=false
-  typeset -g POWERLEVEL9K_BATTERY_BACKGROUND=176
-#  typeset -g POWERLEVEL9K_BATTERY_VISUAL_IDENTIFIER_EXPANSION=' '
+  typeset -g POWERLEVEL9K_BATTERY_BACKGROUND='#6272a4'
+  typeset -g POWERLEVEL9K_BATTERY_VISUAL_IDENTIFIER_EXPANSION=' '
   #####################################[ wifi: wifi speed ]#####################################
   # WiFi color.
   typeset -g POWERLEVEL9K_WIFI_FOREGROUND=0
